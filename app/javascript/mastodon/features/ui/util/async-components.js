@@ -110,6 +110,10 @@ export function ReportModal () {
   return import(/* webpackChunkName: "modals/report_modal" */'../components/report_modal');
 }
 
+export function NicknameModal() {
+  return import(/* webpackChunkName: "modals/nickname_modal" */'../components/report_modal');
+}
+
 export function MediaGallery () {
   return import(/* webpackChunkName: "status/media_gallery" */'../../../components/media_gallery');
 }
