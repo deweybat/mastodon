@@ -152,7 +152,9 @@ const mapDispatchToProps = (dispatch, { intl }) => ({
   onReport (status) {
     dispatch(initReport(status.get('account'), status));
   },
-
+  onNickname (status) {
+    dispatch(initReport(status.get('account'), status));
+  },
   onMute (account) {
     dispatch(initMuteModal(account));
   },

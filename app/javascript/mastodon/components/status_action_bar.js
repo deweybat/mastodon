@@ -61,6 +61,7 @@ class StatusActionBar extends ImmutablePureComponent {
     onDelete: PropTypes.func,
     onDirect: PropTypes.func,
     onMention: PropTypes.func,
+    onNickname: PropTypes.func,
     onMute: PropTypes.func,
     onBlock: PropTypes.func,
     onReport: PropTypes.func,
@@ -155,6 +156,10 @@ class StatusActionBar extends ImmutablePureComponent {
     this.props.onReport(this.props.status);
   }
 
+  handleNickname = () => {
+    this.props.onNickname(this.props.status);
+  }
+  
   handleConversationMuteClick = () => {
     this.props.onMuteConversation(this.props.status);
   }
