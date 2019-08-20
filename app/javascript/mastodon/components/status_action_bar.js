@@ -14,6 +14,7 @@ const messages = defineMessages({
   mention: { id: 'status.mention', defaultMessage: 'Mention @{name}' },
   mute: { id: 'account.mute', defaultMessage: 'Mute @{name}' },
   block: { id: 'account.block', defaultMessage: 'Block @{name}' },
+  nickname: {id: 'account.nickname', defaultMessage: 'Set Nickname for @{name}'},nickname: {id: 'account.nickname', defaultMessage: 'Set Nickname for @{name}'},
   reply: { id: 'status.reply', defaultMessage: 'Reply' },
   share: { id: 'status.share', defaultMessage: 'Share' },
   more: { id: 'status.more', defaultMessage: 'More' },
@@ -220,6 +221,7 @@ class StatusActionBar extends ImmutablePureComponent {
       menu.push(null);
       menu.push({ text: intl.formatMessage(messages.mute, { name: status.getIn(['account', 'username']) }), action: this.handleMuteClick });
       menu.push({ text: intl.formatMessage(messages.block, { name: status.getIn(['account', 'username']) }), action: this.handleBlockClick });
+      menu.push({ text: intl.formatMessage(messages.nickname, {name: status.getIn(['account', 'username']) }), action: this.handleReport });
       menu.push({ text: intl.formatMessage(messages.report, { name: status.getIn(['account', 'username']) }), action: this.handleReport });
 
       if (isStaff) {
