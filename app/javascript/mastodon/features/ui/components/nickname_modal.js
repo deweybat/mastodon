@@ -15,7 +15,7 @@ import IconButton from '../../../components/icon_button';
 
 const messages = defineMessages({
   close: { id: 'lightbox.close', defaultMessage: 'Close' },
-  placeholder: { id: 'report.placeholder', defaultMessage: 'Additional comments' },
+  placeholder: { id: 'lists.edit.submit', defaultMessage: 'Additional comments' },
   submit: { id: 'report.submit', defaultMessage: 'Submit' },
 });
 
