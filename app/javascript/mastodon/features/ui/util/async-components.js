@@ -111,7 +111,7 @@ export function ReportModal () {
 }
 
 export function NicknameModal() {
-  return import(/* webpackChunkName: "modals/nickname_modal" */'../components/report_modal');
+  return import(/* webpackChunkName: "modals/nickname_modal" */'../components/nickname_modal');
 }
 
 export function MediaGallery () {

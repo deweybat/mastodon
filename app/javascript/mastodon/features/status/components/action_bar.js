@@ -50,6 +50,7 @@ class ActionBar extends React.PureComponent {
     onMuteConversation: PropTypes.func,
     onBlock: PropTypes.func,
     onReport: PropTypes.func,
+    onNickname: PropTypes.func,
     onPin: PropTypes.func,
     onEmbed: PropTypes.func,
     intl: PropTypes.object.isRequired,
@@ -99,6 +100,10 @@ class ActionBar extends React.PureComponent {
     this.props.onReport(this.props.status);
   }
 
+  handleNickname = () => {
+    this.props.onNickname(this.props.status);
+  }
+  
   handlePinClick = () => {
     this.props.onPin(this.props.status);
   }

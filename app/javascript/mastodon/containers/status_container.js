@@ -25,6 +25,7 @@ import {
 } from '../actions/statuses';
 import { initMuteModal } from '../actions/mutes';
 import { initReport } from '../actions/reports';
+import { initNickname } from '../actions/nickname';
 import { openModal } from '../actions/modal';
 import { defineMessages, injectIntl, FormattedMessage } from 'react-intl';
 import { boostModal, deleteModal } from '../initial_state';
@@ -153,7 +154,7 @@ const mapDispatchToProps = (dispatch, { intl }) => ({
     dispatch(initReport(status.get('account'), status));
   },
   onNickname (status) {
-    dispatch(initReport(status.get('account'), status));
+    dispatch(initNickname(status.get('account'), status));
   },
   onMute (account) {
     dispatch(initMuteModal(account));

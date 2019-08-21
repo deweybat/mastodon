@@ -33,6 +33,7 @@ import {
 } from '../../actions/statuses';
 import { initMuteModal } from '../../actions/mutes';
 import { initReport } from '../../actions/reports';
+import { initNickname } from '../../actions/nickname';
 import { makeGetStatus } from '../../selectors';
 import { ScrollContainer } from 'react-router-scroll-4';
 import ColumnBackButton from '../../components/column_back_button';
@@ -305,6 +306,10 @@ class Status extends ImmutablePureComponent {
     this.props.dispatch(initReport(status.get('account'), status));
   }
 
+  handleNickname = (status) => {
+    this.props.dispatch(initNickname(status.get('account'), status));
+  }
+
   handleEmbed = (status) => {
     this.props.dispatch(openModal('EMBED', { url: status.get('url') }));
   }
@@ -508,6 +513,7 @@ class Status extends ImmutablePureComponent {
                   onMuteConversation={this.handleConversationMuteClick}
                   onBlock={this.handleBlockClick}
                   onReport={this.handleReport}
+                  onNickname={this.handleNickname}
                   onPin={this.handlePin}
                   onEmbed={this.handleEmbed}
                 />

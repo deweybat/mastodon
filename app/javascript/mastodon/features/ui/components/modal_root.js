@@ -16,6 +16,7 @@ import {
   EmbedModal,
   ListEditor,
   ListAdder,
+  NicknameModal,
 } from '../../../features/ui/util/async-components';
 
 const MODAL_COMPONENTS = {
@@ -25,6 +26,7 @@ const MODAL_COMPONENTS = {
   'CONFIRM': () => Promise.resolve({ default: ConfirmationModal }),
   'MUTE': MuteModal,
   'REPORT': ReportModal,
+  'NICKNAME': NicknameModal,
   'ACTIONS': () => Promise.resolve({ default: ActionsModal }),
   'EMBED': EmbedModal,
   'LIST_EDITOR': ListEditor,
