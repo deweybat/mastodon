@@ -38,7 +38,7 @@ export function toggleStatusReport(statusId, checked) {
   };
 };
 
-export function submitReport() {
+export function submitNickname() {
   return (dispatch, getState) => {
     dispatch(submitReportRequest());
 

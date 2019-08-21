@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { changeReportComment, changeReportForward, submitReport } from '../../../actions/reports';
+import { submitNickname } from '../../../actions/nickname';
 import { expandAccountTimeline } from '../../../actions/timelines';
 import PropTypes from 'prop-types';
 import ImmutablePropTypes from 'react-immutable-proptypes';
@@ -60,7 +61,7 @@ class NicknameModal extends ImmutablePureComponent {
   }
 
   handleSubmit = () => {
-    this.props.dispatch(submitReport());
+    this.props.dispatch(submitNickname());
   }
 
   handleKeyDown = e => {
