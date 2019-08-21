@@ -88,17 +88,12 @@ class NicknameModal extends ImmutablePureComponent {
 
     const domain = account.get('acct').split('@')[1];
 
+
     return (
-      <div className='modal-root__modal report-modal'>
-        <div className='report-modal__target'>
-          <IconButton className='media-modal__close' title={intl.formatMessage(messages.close)} icon='times' onClick={onClose} size={16} />
-          <FormattedMessage id='report.target' defaultMessage='Report {target}' values={{ target: <strong>{account.get('acct')}</strong> }} />
-        </div>
-
-        <div className='report-modal__container'>
-          <div className='report-modal__comment'>
-            <p><FormattedMessage id='report.hin' defaultMessage='The penis will be sent to your server moderators. You can provide an explanation of why you are reporting this account below:' /></p>
-
+        <div className='modal-root__modal embed-modal'>
+            <p className='hint'>
+                <FormattedMessage id='embed.instruction' defaultMessage='Set Nickname.'/>
+            </p>
             <textarea
               className='setting-text light'
               placeholder={intl.formatMessage(messages.placeholder)}
@@ -108,29 +103,8 @@ class NicknameModal extends ImmutablePureComponent {
               disabled={isSubmitting}
               autoFocus
             />
-
-            {domain && (
-              <div>
-                <p><FormattedMessage id='report.forward_hint' defaultMessage='The account is from another server. Send an anonymized copy of the report there as well?' /></p>
-
-                <div className='setting-toggle'>
-                  <Toggle id='report-forward' checked={forward} disabled={isSubmitting} onChange={this.handleForwardChange} />
-                  <label htmlFor='report-forward' className='setting-toggle__label'><FormattedMessage id='report.forward' defaultMessage='Forward to {target}' values={{ target: domain }} /></label>
-                </div>
-              </div>
-            )}
-
-            <Button disabled={isSubmitting} text={intl.formatMessage(messages.submit)} onClick={this.handleSubmit} />
-          </div>
-
-          <div className='report-modal__statuses'>
-            <div>
-              {statusIds.map(statusId => <StatusCheckBox id={statusId} key={statusId} disabled={isSubmitting} />)}
-            </div>
-          </div>
         </div>
-      </div>
-    );
+      );
   }
 
 }
