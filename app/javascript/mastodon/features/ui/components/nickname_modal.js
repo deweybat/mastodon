@@ -91,18 +91,23 @@ class NicknameModal extends ImmutablePureComponent {
 
     return (
         <div className='modal-root__modal embed-modal'>
-            <p className='hint'>
-                <FormattedMessage id='embed.instruction' defaultMessage='Set Nickname.'/>
-            </p>
-            <textarea
-              className='setting-text light'
-              placeholder={intl.formatMessage(messages.placeholder)}
-              value={comment}
-              onChange={this.handleCommentChange}
-              onKeyDown={this.handleKeyDown}
-              disabled={isSubmitting}
-              autoFocus
-            />
+
+            <div className='embed-modal__container'>
+
+                <p className='hint'>
+                    <FormattedMessage id='embed.instruction' defaultMessage='Set Nickname.'/>
+                </p>
+                <textarea
+                className='setting-text light'
+                placeholder={intl.formatMessage(messages.placeholder)}
+                value={comment}
+                onChange={this.handleCommentChange}
+                onKeyDown={this.handleKeyDown}
+                disabled={isSubmitting}
+                autoFocus
+                />
+                <Button disabled={isSubmitting} text={intl.formatMessage(messages.submit)} onClick={this.handleSubmit} />
+            </div>
         </div>
       );
   }
