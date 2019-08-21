@@ -159,7 +159,7 @@ class StatusActionBar extends ImmutablePureComponent {
   handleNickname = () => {
     this.props.onNickname(this.props.status);
   }
-  
+
   handleConversationMuteClick = () => {
     this.props.onMuteConversation(this.props.status);
   }
@@ -223,7 +223,7 @@ class StatusActionBar extends ImmutablePureComponent {
     } else {
       menu.push({ text: intl.formatMessage(messages.mention, { name: status.getIn(['account', 'username']) }), action: this.handleMentionClick });
       menu.push({ text: intl.formatMessage(messages.direct, { name: status.getIn(['account', 'username']) }), action: this.handleDirectClick });
-      menu.push({ text: intl.formatMessage(messages.nickname, {name: status.getIn(['account', 'username']) }), action: this.handleReport });
+      menu.push({ text: intl.formatMessage(messages.nickname, {name: status.getIn(['account', 'username']) }), action: this.handleNickname });
       menu.push(null);
       menu.push({ text: intl.formatMessage(messages.mute, { name: status.getIn(['account', 'username']) }), action: this.handleMuteClick });
       menu.push({ text: intl.formatMessage(messages.block, { name: status.getIn(['account', 'username']) }), action: this.handleBlockClick });
