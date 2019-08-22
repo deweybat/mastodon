@@ -124,6 +124,11 @@ export function favourite(status) {
   };
 };
 
+export function nickname(status) {
+  return function (dispatch, getState) {
+    
+  }
+}
 export function unfavourite(status) {
   return (dispatch, getState) => {
     dispatch(unfavouriteRequest(status));
