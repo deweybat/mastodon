@@ -1,7 +1,7 @@
 import api from '../api';
 import { openModal, closeModal } from './modal';
 
-export const REPORT_INIT   = 'REPORT_INIT';
+export const NICKNAME   = 'REPORT_INIT';
 export const REPORT_CANCEL = 'REPORT_CANCEL';
 
 export const REPORT_SUBMIT_REQUEST = 'REPORT_SUBMIT_REQUEST';
@@ -15,7 +15,7 @@ export const REPORT_FORWARD_CHANGE = 'REPORT_FORWARD_CHANGE';
 export function initNickname(account, status) {
   return dispatch => {
     dispatch({
-      type: REPORT_INIT,
+      type: NICKNAME,
       account,
       status,
     });
@@ -42,7 +42,7 @@ export function submitNickname() {
   return (dispatch, getState) => {
     dispatch(submitReportRequest());
 
-    api(getState).post('/api/v1/reports', {
+    api(getState).post('/api/v1/nicknames', {
       account_id: getState().getIn(['reports', 'new', 'account_id']),
       status_ids: getState().getIn(['reports', 'new', 'status_ids']),
       comment: getState().getIn(['reports', 'new', 'comment']),

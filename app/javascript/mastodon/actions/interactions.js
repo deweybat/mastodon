@@ -126,9 +126,18 @@ export function favourite(status) {
 
 export function nickname(status) {
   return function (dispatch, getState) {
-    
-  }
-}
+    dispatch(nicknameRequest(status));
+
+    api(getState).post(`/api/v1/nicknames/${status.get('id')}/nickname`).then(function (response) {
+      dispatch(importFetchedNicknames(response.data));
+      dispatch(nicknameSuccess(status));
+    }).catch(function (error) {
+      dispatch(favouriteFail(status, error));
+    });
+  };
+};
+
+
 export function unfavourite(status) {
   return (dispatch, getState) => {
     dispatch(unfavouriteRequest(status));
